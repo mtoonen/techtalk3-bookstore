@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HomepageComponent} from './components/homepage/homepage.component';
 import {SearchComponent} from './components/search/search.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BookdetailsComponent} from './components/bookdetails/bookdetails.component';
 import {RecommendedComponent} from './components/recommended/recommended.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -11,6 +11,9 @@ import {RouterModule, Routes} from '@angular/router';
 import {KlantportalComponent} from './components/klant/klantportal/klantportal.component';
 import {EditbookComponent} from './components/medewerker/editbook/editbook.component';
 import {OrderbookComponent} from './components/klant/orderbook/orderbook.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
 
 const routes: Routes = [
   {path: 'klant', component: KlantportalComponent},
@@ -39,7 +42,11 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    ReactiveFormsModule,
   ]
 })
 export class StoreModule {

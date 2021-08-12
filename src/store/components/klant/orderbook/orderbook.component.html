@@ -1,1 +1,23 @@
-<p>orderbook works!</p>
+<h3>Bestel {{book.title}}</h3>
+<form [formGroup]="bookForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Aantal</mat-label>
+    <input matInput type="number" value="1"  formControlName="number" >
+  </mat-form-field>
+  <br/>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Naam</mat-label>
+    <input matInput type="text" value="" formControlName="customerName"/><br/>
+  </mat-form-field>
+  <br/>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Adres</mat-label>
+    <input matInput type="text" value="" formControlName="customerAddress"/><br/>
+  </mat-form-field>
+  <br/>
+
+  <button mat-raised-button (click)="submit()" color="primary" value="Koop">Koop</button>
+  <button mat-raised-button  routerLink="/klant" color="warn" value="Koop">Annuleer</button>
+</form>
