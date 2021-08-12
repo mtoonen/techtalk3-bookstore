@@ -1,0 +1,8 @@
+<h2>Zoek een boek</h2>
+<input #searchTerm type="text"/><button (click)="search(searchTerm.value)">Zoek</button>
+
+<div>
+  <div *ngFor="let book of books">
+    <img src="{{book.thumbnail}}&id={{book.id}}"/> <a href="#" (click)="open(book)">{{book.title}}</a>
+  </div>
+</div>

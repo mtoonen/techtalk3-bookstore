@@ -1,0 +1,6 @@
+<h1>B3Books</h1>
+<button (click)="page = 'klant'">Klant</button><button (click)="page = 'medewerker'">Medewerker</button><button (click)="page = 'zoek'">Zoek</button>
+<app-klant *ngIf="page=='klant'"></app-klant><app-medewerker *ngIf="page =='medewerker'"></app-medewerker>
+<app-search *ngIf="page=='zoek'" (openBook)="bookOpened($event)"></app-search>
+<app-bookdetails *ngIf="page=='bookdetails'" [book]="currentBook"></app-bookdetails>
+
