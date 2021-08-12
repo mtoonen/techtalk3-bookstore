@@ -1,1 +1,28 @@
 <h3>Bewerk boek: {{book.title}}</h3>
+<form [formGroup]="bookForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Titel</mat-label>
+    <input matInput formControlName="title" >
+  </mat-form-field>
+  <br/>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Eerste auteur</mat-label>
+    <input matInput type="text" formControlName="author"/><br/>
+  </mat-form-field>
+  <br/>
+
+  <mat-form-field appearance="fill">
+    <mat-label>ISBN</mat-label>
+    <input matInput type="text"  formControlName="isbn"/><br/>
+  </mat-form-field>
+  <br/>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Uitgever</mat-label>
+    <input matInput type="text"  formControlName="publisher"/><br/>
+  </mat-form-field>
+  <br/>
+  <button mat-raised-button (click)="submit()" color="primary">Opslaan</button>
+  <button mat-raised-button  routerLink="/medewerker" color="warn">Annuleer</button>
+</form>

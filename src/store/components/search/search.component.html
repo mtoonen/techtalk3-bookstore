@@ -1,14 +1,26 @@
 <h2>Zoek een boek</h2>
-<input #searchTerm type="text"/>
-<button (click)="search(searchTerm.value)">Zoek</button>
+<mat-form-field>
+  <mat-label>Zoek</mat-label>
+  <input matInput #searchTerm type="text"/>
+</mat-form-field>
+<button mat-raised-button (click)="search(searchTerm.value)">Zoek</button>
 
 <div>
-  <div *ngFor="let book of books">
-    <img src="{{book.thumbnail}}&id={{book.id}}"/>
-    <a [routerLink]="['/bookdetails', book.isbn]" routerLinkActive="active">{{book.title}}</a>
-    <span *ngIf="canEdit"> |
-      <a [routerLink]="['/editbook', book.isbn]" routerLinkActive="active">Bewerk</a>
-    </span>
-    | <a [routerLink]="['/orderbook', book.isbn]" routerLinkActive="active">Bestel</a>
+  <div *ngFor="let book of books" class="result">
+    <div class="left">
+      <img src="{{book.thumbnail}}&id={{book.id}}"/>
+    </div>
+    <div class="right">
+      <div class="title"><a [routerLink]="['/bookdetails', book.isbn]" routerLinkActive="active">{{book.title}}</a>
+      </div>
+      <div class="content">sadfsafd</div>
+      <div class="edit">
+      <span *ngIf="canEdit">
+        <a [routerLink]="['/editbook', book.isbn]" routerLinkActive="active">Bewerk</a>
+      </span>
+        | <a [routerLink]="['/orderbook', book.isbn]" routerLinkActive="active">Bestel</a>
+      </div>
+    </div>
   </div>
+
 </div>
