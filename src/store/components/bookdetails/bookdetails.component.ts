@@ -3,6 +3,7 @@ import {Book} from '../../models/book';
 import {ActivatedRoute} from '@angular/router';
 import {SearchService} from '../../services/search.service';
 import {switchMap} from 'rxjs/operators';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-bookdetails',

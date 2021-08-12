@@ -18,10 +18,10 @@
         </div>
         <div class="content"></div>
         <div class="edit">
-      <span *ngIf="canEdit">
-        <a [routerLink]="['/editbook', book.isbn]" routerLinkActive="active">Bewerk</a>
-      </span>
-          | <a [routerLink]="['/orderbook', book.isbn]" routerLinkActive="active">Bestel</a>
+          <span *ngIf="canEdit">
+            <a [routerLink]="['/editbook', book.isbn]" routerLinkActive="active">Bewerk</a> |
+          </span>
+          <a [routerLink]="['/orderbook', book.isbn]" routerLinkActive="active">Bestel</a>
         </div>
       </div>
     </div>
