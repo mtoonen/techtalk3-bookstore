@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterContentChecked, AfterViewChecked, AfterViewInit, Component, HostListener, Input, OnDestroy, OnInit} from '@angular/core';
 import {Book} from '../../models/book';
 import {RecommenderService} from '../../services/recommender.service';
 
@@ -17,7 +17,7 @@ export class RecommendedComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.recommender.recommend2$(this.book.isbn).subscribe(books => this.recommendedBooks = books);
+    this.recommender.recommend$(this.book.isbn).subscribe(books => this.recommendedBooks = books);
   }
 
 }

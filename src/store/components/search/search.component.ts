@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {SearchService} from '../../services/search.service';
 import {Book} from '../../models/book';
 
@@ -12,6 +12,8 @@ export class SearchComponent implements OnInit {
   @Output()
   public openBook = new EventEmitter<Book>();
   public books: Book[] = [];
+  @Input()
+  public canEdit = false;
 
   constructor(private searchService: SearchService) {
   }

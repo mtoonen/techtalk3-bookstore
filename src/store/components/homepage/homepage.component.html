@@ -1,6 +1,10 @@
 <h1>B3Books</h1>
-<button (click)="page = 'klant'">Klant</button><button (click)="page = 'medewerker'">Medewerker</button><button (click)="page = 'zoek'">Zoek</button>
-<app-klant *ngIf="page=='klant'"></app-klant><app-medewerker *ngIf="page =='medewerker'"></app-medewerker>
-<app-search *ngIf="page=='zoek'" (openBook)="bookOpened($event)"></app-search>
-<app-bookdetails *ngIf="page=='bookdetails'" [book]="currentBook"></app-bookdetails>
-
+<!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+<nav>
+  <ul>
+    <li><a routerLink="/klant" routerLinkActive="active">Klant</a></li>
+    <li><a routerLink="/medewerker" routerLinkActive="active">Medewerker</a></li>
+  </ul>
+</nav>
+<!-- The routed views render in the <router-outlet>-->
+<router-outlet></router-outlet>

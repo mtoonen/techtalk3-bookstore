@@ -1,4 +1,4 @@
 <h3>Recommended works:</h3>
 <div *ngFor="let book of recommendedBooks">
-  {{book.title}}
+  <a [routerLink]="['/bookdetails', book.isbn]" routerLinkActive="active">{{book.title}}</a>
 </div>
